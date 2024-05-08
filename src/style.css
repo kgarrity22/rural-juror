@@ -1,0 +1,209 @@
+/* for typing effect */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* .blob {
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 50% 50%;
+} */
+
+/* 0-25*/
+@keyframes show1 {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0.25;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  35% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 25-50*/
+@keyframes show2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.15;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.25;
+  }
+  35% {
+    opacity: 0.5;
+  }
+  40% {
+    opacity: 0.75;
+  }
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0.75;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  65% {
+    opacity: 0.25;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 50-75*/
+@keyframes show3 {
+  0% {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  45% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  55% {
+    opacity: 0.75;
+  }
+  60% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  90% {
+    opacity: 0.25;
+  }
+  95% {
+    opacity: 0.15;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* 75-100*/
+@keyframes show4 {
+  0% {
+    opacity: 0.75;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  15% {
+    opacity: 0.25;
+  }
+  75% {
+    opacity: 0.15;
+  }
+  80% {
+    opacity: 0.25;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  95% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/** Fonts **/
+@font-face {
+  font-family: 'Balance Groovy';
+  src:
+    local('Balance-Groovy-Groovy'),
+    url('./assets/fonts/balance_groovy/Balance-Groovy-Sans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src:
+    local('coolvetica-rg'),
+    url('./assets/fonts/coolvetica/coolvetica-rg.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Hey Comic';
+  src:
+    local('Hey-Comic'),
+    url('./assets/fonts/hey_comic/Hey-Comic.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Lost Signal';
+  src:
+    local('Lost-Signal-Regular'),
+    url('./assets/fonts/lost_signal/Lost-Signal-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Summer Sunshine';
+  src:
+    local('KGSummerSunshine'),
+    url('./assets/fonts/summer_sunshine/KGSummerSunshine.ttf') format('truetype');
+}
