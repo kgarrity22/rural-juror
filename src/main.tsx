@@ -5,10 +5,14 @@ import * as ReactDOM from 'react-dom/client';
 import { PaletteMode, ThemeProvider } from '@mui/material';
 import { basicTheme } from './styles/theme';
 import { getTheme } from './styles/utils';
-import { Home } from './routes/home';
-import Layout from './components/layout';
+import { TypingExample } from './routes/home';
 import './style.css';
-import { AnimatedBackground } from './features/animated-background/animated-background';
+import { About } from './features/about/about';
+import { Work } from './features/work/work';
+import { Contact } from './features/contact/contact';
+import { Home } from './features/home/home';
+import { Layout } from './components/layout';
+import { CustomCursor } from './components/cursor';
 
 // need to install react-router
 const router = createBrowserRouter([
@@ -20,15 +24,19 @@ const router = createBrowserRouter([
       { path: '/home', element: <Home /> },
       {
         path: '/about',
-        element: <AnimatedBackground />
+        element: <About />
       },
       {
         path: '/work',
-        element: <>Work</>
+        element: <Work />
       },
       {
         path: '/contact',
-        element: <>Contact</>
+        element: <Contact />
+      },
+      {
+        path: '/typing-effect',
+        element: <TypingExample />
       }
     ]
   }
@@ -37,6 +45,7 @@ const router = createBrowserRouter([
 export const ColorModeContext = createContext({
   toggleColorMode: () => {}
 });
+
 const ToggleColorMode = ({ children }: { children: React.ReactNode }) => {
   const [mode, setMode] = React.useState<PaletteMode>('light');
   const colorMode = React.useMemo(
@@ -65,6 +74,7 @@ const ToggleColorMode = ({ children }: { children: React.ReactNode }) => {
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ThemeProvider theme={basicTheme}>
     <ToggleColorMode>
+      <CustomCursor />
       <RouterProvider router={router} />
     </ToggleColorMode>
   </ThemeProvider>
