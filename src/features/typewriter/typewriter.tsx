@@ -1,26 +1,38 @@
-import { SxProps, Typography } from '@mui/material';
-import { useTypewriter } from './hooks/use-typewriter';
+import { Box, Typography } from '@mui/material';
+import { TypewriterProps, useTypewriter } from '../typewriter/hooks/use-typewriter';
 
-export const Typewriter = ({ text, speed, textStyles }: { text: string; speed?: number; textStyles?: SxProps }) => {
-  const displayText = useTypewriter({ text, speed });
+type ComponentProps = TypewriterProps & { cursorColor?: string };
 
-  // TODO: this doesn't account for the blinking cursor
+/* Blinking '|' cursor component */
+const Cursor = ({ cursorColor = 'inherit' }: { cursorColor?: string }) => {
   return (
-    <>
-      <Typography variant="body1" sx={textStyles}>
-        {displayText}
-      </Typography>
-    </>
-    //     <span
-    //   style={{ color: cursorColor }}
-    //   className={`${styles.blinkingCursor} ${
-    //     cursorBlinking ? styles.blinking : ''
-    //   }`}
-    // >
-    //   {cursorStyle}
-    // </span>
+    <span style={{ color: cursorColor }} className="blinking-cursor">
+      |
+    </span>
   );
 };
 
-// TODO typewriter carousel --> typewriter effect on a timer --> iterates through list/object
-// {text, styles, }
+/* Typewriter component  */
+export const Typewriter = ({
+  words = ['Hello World!', 'This is', 'a simple Typewriter'],
+  typeSpeed = 80,
+  deleteSpeed = 50,
+  delaySpeed = 1500,
+  cursorColor = 'inherit',
+  textStyles = []
+}: ComponentProps): JSX.Element => {
+  const [displayText, displayStyle] = useTypewriter({
+    words,
+    typeSpeed,
+    deleteSpeed,
+    delaySpeed,
+    textStyles
+  });
+
+  return (
+    <Box display="flex" sx={displayStyle}>
+      <Typography sx={displayStyle}>{displayText}</Typography>
+      <Cursor cursorColor={cursorColor} />
+    </Box>
+  );
+};
