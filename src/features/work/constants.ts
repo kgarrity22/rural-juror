@@ -5,7 +5,6 @@ import prismAppV1 from '../../assets/work/prism-app-v1.png';
 import prismCharts from '../../assets/work/prism-charts.gif';
 import travelWise from '../../assets/work/travelwise-placeview.png';
 import vizAccessibility from '../../assets/work/viz-accessibility.png';
-import tableauCatsDogs from '../../assets/work/tableau-cats-dogs.png';
 import { SingleProject } from './types';
 
 export const projects: SingleProject[] = [
@@ -82,22 +81,5 @@ export const projects: SingleProject[] = [
     code: 'https://github.com/kgarrity22/TravelWise',
     type: ['app'],
     technologies: ['Swift', 'Firebase', 'MLKit']
-  },
-  {
-    id: 'cats-dogs-tableau',
-    shortTitle: 'Cats vs. Dogs',
-    longDescription: '',
-    image: tableauCatsDogs,
-    website: 'https://public.tableau.com/app/profile/kathleen.garrity/viz/hw2Vis_16022701098490/dogvcatstory',
-    type: ['dataviz'],
-    technologies: ['Tableau']
   }
 ];
-
-//
-
-// with school
-// https://public.tableau.com/app/profile/kathleen.garrity/viz/hw2Vis_16022701098490/dogvcatstory
-// tableau viz of cats v dogs in the US
-
-// yeah let's add the tableau project in too because that kinda helps show range I think?

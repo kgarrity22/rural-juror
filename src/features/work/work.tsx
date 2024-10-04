@@ -2,72 +2,49 @@ import { Box, Card, CardContent, Chip, Grid, Typography, useTheme } from '@mui/m
 import { useState } from 'react';
 import { projects } from './constants';
 import { ArrowOutward } from '@mui/icons-material';
-import { ProjectFilter, SingleProject } from './types';
+import { SingleProject } from './types';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
-// run this on chip click
-const filterProjects = (projects: any[], selected: 'all' | 'dataviz' | 'research' | 'app') =>
-  selected === 'all' ? projects : projects.filter((project) => project.type.includes(selected));
-
 export const Work = () => {
   const theme = useTheme();
-
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  const [selectedFilter, setSelectedFilter] = useState('all');
-
-  const filters: ProjectFilter[] = [
-    { category: 'all', title: 'All' },
-    { category: 'app', title: 'Apps' },
-    { category: 'dataviz', title: 'DataViz' },
-    { category: 'research', title: 'Research' }
-  ];
-
-  const [projectsToDisplay, setProjectsToDisplay] = useState(projects);
-
   return (
-    <Box
-      sx={
-        {
-          // mt: { xs: theme.spacing(10), sm: theme.spacing(20), md: theme.spacing(25) },
-          // // mr: { md: theme.spacing(5) },
-          // // ml: { md: theme.spacing(5) },
-          // mb: theme.spacing(10)
-        }
-      }
-    >
+    <Box>
       <Typography variant="h1" sx={{ opacity: 0, animation, animationDelay: '1s', mb: theme.spacing(1) }}>
         Projects
       </Typography>
       <Typography
         variant="body1"
-        sx={{ fontSize: 12, mb: theme.spacing(2), maxWidth: 300, opacity: 0, animation, animationDelay: '1.1s' }}
+        sx={{
+          opacity: 0,
+          animation,
+          animationDelay: '1s',
+          mb: theme.spacing(2),
+          fontFamily: theme.typography.caption.fontFamily,
+          fontWeight: 'bold'
+        }}
       >
-        A collection of both professional and personal projects. Use the filters below to narrow th
+        A collection of both professional and personal projects.
+        <br /> Click on a project card to see that project live.
       </Typography>
-      <Box sx={{ opacity: 0, animation, animationDelay: '1.1s' }}>
-        {/* <Box display="flex" sx={{ mb: theme.spacing(2) }}>
-          {filters.map((filter) => (
-            <Chip
-              sx={{
-                borderRadius: theme.spacing(0.5),
-                bgcolor: filter.category === selectedFilter ? '#333' : '#fff',
-                color: filter.category === selectedFilter ? '#fff' : '#333',
-                mr: theme.spacing(1),
-                fontFamily: 'Inter',
-                height: 28,
-                fontWeight: 500
-              }}
-              label={filter.title}
-              onClick={() => {
-                setSelectedFilter(filter.category);
-                setProjectsToDisplay(filterProjects(projects, filter.category));
-              }}
-            />
-          ))}
-        </Box> */}
-        {projectsToDisplay.map((p) => (
+
+      {/* <Typography
+        variant="caption"
+        sx={{
+          fontSize: 12,
+          maxWidth: 200,
+          opacity: 0,
+          animation: animation,
+          animationDelay: '1.1s'
+          // transition: 'opacity 0.3s'
+        }}
+      >
+        A collection of both professional and personal projects. Click on a project card to see that project live.
+      </Typography> */}
+      <Box sx={{ opacity: 0, animation, animationDelay: '1.1s', mt: theme.spacing(2) }}>
+        {projects.map((p) => (
           <Box
             onMouseEnter={() => setSelectedProject(p.shortTitle)}
             onMouseLeave={() => setSelectedProject(null)}
@@ -95,16 +72,10 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
           animation,
           opacity: 0,
           animationDelay: '1.2s',
-          //
           width: '100%',
           background: 'transparent',
-          //
-
-          // color: '#fff',
           mb: theme.spacing(1),
           border: '1px solid rgba( 255, 255, 255, 0.18 )',
-          // backgroundImage: 'linear-gradient(rgb(0 0 0/40%) 0 0)',
-          //
           '& .MuiTypography-h5': {
             mb: theme.spacing(0)
           },
@@ -139,11 +110,7 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
             </Grid>
             <Grid item xs={12} sm={7}>
               <Box display="flex">
-                <Typography
-                  sx={{ fontWeight: 'bold', fontFamily: 'Inter Tight', mb: theme.spacing(1) }}
-                  variant="h5"
-                  // className="hover-underline-animation"
-                >
+                <Typography sx={{ fontWeight: 'bold', fontFamily: 'Inter Tight', mb: theme.spacing(1) }} variant="h5">
                   {project.longTitle || project.shortTitle}
                 </Typography>
                 <ArrowOutward
@@ -156,13 +123,19 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
               </Box>
               <Box sx={{ mb: theme.spacing(1) }}>
                 {project.technologies.map((t) => (
-                  <Chip sx={{ mr: theme.spacing(1), fontFamily: 'Inter', height: 24, fontSize: 10 }} label={t} />
+                  <Chip
+                    sx={{
+                      mr: theme.spacing(1),
+                      fontFamily: 'Inter',
+                      height: 24,
+                      fontSize: 10
+                    }}
+                    label={t}
+                  />
                 ))}
               </Box>
 
-              <Typography variant="body1" sx={{ fontFamily: 'Inter', fontSize: 14 }}>
-                {project.longDescription}
-              </Typography>
+              <Typography variant="body1">{project.longDescription}</Typography>
 
               {project.code && (
                 <a href={project.code} style={{ color: '#000' }}>
