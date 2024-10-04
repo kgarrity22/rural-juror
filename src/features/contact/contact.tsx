@@ -2,6 +2,7 @@ import { ArrowDownward, Send } from '@mui/icons-material';
 import { Box, Typography, useTheme } from '@mui/material';
 import { KATHLEEN_SOCIALS } from '../../constants';
 import { SocialsList } from '../../components/social-icons';
+import { HoverUnderlineText } from '../../components/hover-underline-text';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
@@ -27,13 +28,7 @@ export const Contact = () => {
                 }
               }}
             >
-              <Typography
-                variant="h6"
-                className="hover-underline-animation"
-                sx={{ fontWeight: 400, cursor: 'pointer' }}
-              >
-                Shoot me an email
-              </Typography>
+              <HoverUnderlineText variant="h6" sx={{ fontWeight: 400, cursor: 'pointer' }} text="Shoot me an email" />
               <Send sx={{ ml: theme.spacing(1), transform: 'rotate(-35deg)' }} />
             </Box>
           </li>
@@ -52,13 +47,12 @@ export const Contact = () => {
                 }
               }}
             >
-              <Typography
+              <HoverUnderlineText
                 variant="h6"
-                className="hover-underline-animation"
                 sx={{ fontWeight: 400, cursor: 'pointer' }}
-              >
-                Download my CV
-              </Typography>
+                text="Download my CVl"
+                color="inherit"
+              />
               <ArrowDownward />
             </Box>
           </li>

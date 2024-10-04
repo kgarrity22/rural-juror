@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LinkedIn, GitHub, Send } from '@mui/icons-material';
 import { Box, useTheme } from '@mui/material';
 import { KATHLEEN_SOCIALS } from '../constants';
+import { HoverUnderlineText } from './hover-underline-text';
 
-// provide a generic
-// map from a constant
-
-//
+/**
+ * Array of animated icons linked to socials
+ */
 export const SocialIcons = ({
   color = '#b2b2b2',
   hoverColor
@@ -51,9 +51,9 @@ export const SocialsList = ({ socialLinks }: { socialLinks: { url: string; title
   return (
     <ul>
       {socialLinks.map(({ url, title }) => (
-        <li>
-          <a style={{ textDecoration: 'none', color: 'inherit' }} className="hover-underline-animation" href={url}>
-            {title}
+        <li key={title}>
+          <a style={{ textDecoration: 'none', color: 'inherit' }} href={url}>
+            <HoverUnderlineText component="span" variant="h6" text={title} />
           </a>
         </li>
       ))}
