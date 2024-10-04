@@ -56,7 +56,6 @@ export const AnimatedBackground2 = () => {
           borderRadius: '60%',
           filter: 'blur(200px)',
           transform: 'rotate(55deg)'
-          //   opacity: 0.7
         }}
       />
       <Box
@@ -70,7 +69,6 @@ export const AnimatedBackground2 = () => {
           borderRadius: '35%',
           filter: 'blur(150px)',
           transform: 'rotate(55deg)'
-          //   opacity: 0.7
         }}
       />
 
@@ -106,7 +104,6 @@ export const AnimatedBackground3 = () => {
           borderRadius: '50%',
           filter: 'blur(100px)',
           transform: 'rotate(55deg)'
-          //   opacity: 0.7
         }}
       />
 
@@ -120,7 +117,6 @@ export const AnimatedBackground3 = () => {
           right: -800,
           borderRadius: '50%',
           filter: 'blur(100px)'
-          //   opacity: 0.7
         }}
       />
       <Box
@@ -134,7 +130,6 @@ export const AnimatedBackground3 = () => {
           borderRadius: '50%',
           filter: 'blur(200px)',
           transform: 'rotate(-45deg)'
-          //   opacity: 0.7
         }}
       />
     </Box>
@@ -154,7 +149,6 @@ export const AnimatedBackground4 = () => {
           left: -200,
           borderRadius: '30%',
           filter: 'blur(80px)'
-          //   opacity: 0.7
         }}
       />
       <Box
@@ -167,7 +161,6 @@ export const AnimatedBackground4 = () => {
           right: -200,
           borderRadius: '30%',
           filter: 'blur(80px)'
-          //   opacity: 0.7
         }}
       />
 
@@ -181,7 +174,6 @@ export const AnimatedBackground4 = () => {
           right: -800,
           borderRadius: '50%',
           filter: 'blur(100px)'
-          //   opacity: 0.7
         }}
       />
       <Box
@@ -195,7 +187,6 @@ export const AnimatedBackground4 = () => {
           borderRadius: '50%',
           filter: 'blur(200px)',
           transform: 'rotate(-45deg)'
-          //   opacity: 0.7
         }}
       />
       <Box
@@ -208,7 +199,6 @@ export const AnimatedBackground4 = () => {
           left: 0,
           borderRadius: '20%',
           filter: 'blur(200px)'
-          //   opacity: 0.7
         }}
       />
     </Box>
@@ -229,7 +219,6 @@ export const AnimatedBackground5 = () => {
           right: -200,
           borderRadius: '30%',
           filter: 'blur(80px)'
-          //   opacity: 0.7
         }}
       />
       <Box
@@ -242,7 +231,6 @@ export const AnimatedBackground5 = () => {
           right: -200,
           borderRadius: '30%',
           filter: 'blur(80px)'
-          //   opacity: 0.7
         }}
       />
 
@@ -256,8 +244,6 @@ export const AnimatedBackground5 = () => {
           right: -800,
           borderRadius: '50%',
           filter: 'blur(160px)'
-
-          //   opacity: 0.7
         }}
       />
 
@@ -271,8 +257,6 @@ export const AnimatedBackground5 = () => {
           left: -100,
           borderRadius: '20%',
           filter: 'blur(150px)'
-
-          //   opacity: 0.7
         }}
       />
     </Box>
