@@ -1,7 +1,35 @@
-/* html {
-  cursor: ;
-} */
+/** Fonts **/
+@font-face {
+  font-family: 'Coolvetica';
+  src:
+    local('coolvetica-rg'),
+    url('./assets/fonts/coolvetica/coolvetica-rg.otf') format('opentype');
+}
 
+/** Animated underline **/
+.hover-underline-animation {
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--underline-color, #fff);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/** Keyframe animations **/
 @keyframes show2 {
   0% {
     opacity: 0;
@@ -47,43 +75,6 @@
   }
 }
 
-/** Fonts **/
-@font-face {
-  font-family: 'Coolvetica';
-  src:
-    local('coolvetica-rg'),
-    url('./assets/fonts/coolvetica/coolvetica-rg.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Lost Signal';
-  src:
-    local('Lost-Signal-Regular'),
-    url('./assets/fonts/lost_signal/Lost-Signal-Regular.otf') format('opentype');
-}
-
-.hover-underline-animation {
-  position: relative;
-}
-
-.hover-underline-animation::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-.hover-underline-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
 @keyframes bounce {
   25% {
     transform: translateY(-15%);
@@ -114,9 +105,6 @@
   }
 }
 
-/* .fade-in-down {
-  animation: fade-in-down 3s ease;
-} */
 @keyframes fade-in-down {
   0% {
     opacity: 0;
@@ -125,17 +113,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
@@ -150,9 +127,6 @@
   }
 }
 
-/* .fade-out-up {
-  animation: fade-out-up 1s ease-out backwards;
-} */
 @keyframes fade-out-up {
   0% {
     opacity: 1;
@@ -165,8 +139,8 @@
 }
 
 /*
-* blink animation 
---> uses 47, 97 to limit cursor fade effect, more strict blink 
+  blink animation 
+  --> uses 47, 97 to limit cursor fade effect, more strict blink 
 */
 @keyframes blink {
   0% {
