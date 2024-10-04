@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Toolbar, useTheme } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import { ColorModeContext } from '../main';
 import { AnimatedMenuIcon } from '.';
@@ -14,6 +14,8 @@ export const TopNavBar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const colorMode = useContext(ColorModeContext);
+
+  const isMobile = useMediaQuery(theme.breakpoints.between('xs', 'sm'));
 
   // detect scroll position
   useEffect(() => {
@@ -36,16 +38,18 @@ export const TopNavBar = () => {
     <Box>
       <AppBar position="fixed" sx={{ background: 'transparent', boxShadow: 'none' }}>
         <Toolbar disableGutters>
-          <Box
-            sx={{
-              transition: 'left 0.5s ease',
-              position: 'fixed',
-              left: scrolled ? theme.spacing(1) : '10%',
-              top: theme.spacing(2)
-            }}
-          >
-            <AnimatedNameButton />
-          </Box>
+          {!isMobile && (
+            <Box
+              sx={{
+                transition: 'left 0.5s ease',
+                position: 'fixed',
+                left: scrolled ? theme.spacing(1) : '10%',
+                top: theme.spacing(2)
+              }}
+            >
+              <AnimatedNameButton />
+            </Box>
+          )}
 
           <Box
             sx={{
@@ -57,13 +61,15 @@ export const TopNavBar = () => {
               top: theme.spacing(2)
             }}
           >
-            <IconButton
-              sx={{ mr: theme.spacing(0.5) }}
-              onClick={colorMode.toggleColorMode}
-              aria-label="dark-light-mode-toggle"
-            >
-              {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-            </IconButton>
+            {!isMobile && (
+              <IconButton
+                sx={{ mr: theme.spacing(0.5) }}
+                onClick={colorMode.toggleColorMode}
+                aria-label="dark-light-mode-toggle"
+              >
+                {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+              </IconButton>
+            )}
             <AnimatedMenuIcon showMenu={showMenu} onClick={() => setShowMenu(!showMenu)} />
           </Box>
         </Toolbar>

@@ -13,6 +13,10 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-brands-svg-icons": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.15",
     "commitizen": "^4.3.0",
@@ -43,6 +47,6 @@
   },
   "main": "index.js",
   "repository": "https://github.com/kgarrity22/rural-juror.git",
-  "author": "Kathleen Garrity <garrityk@bc.edu>",
+  "author": "Kathleen Garrity <kathleen.garrity223@gmail.com>",
   "license": "MIT"
 }
