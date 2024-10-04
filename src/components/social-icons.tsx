@@ -52,7 +52,7 @@ export const SocialsList = ({ socialLinks }: { socialLinks: { url: string; title
     <ul>
       {socialLinks.map(({ url, title }) => (
         <li>
-          <a style={{ textDecoration: 'none', color: 'black' }} className="hover-underline-animation" href={url}>
+          <a style={{ textDecoration: 'none', color: 'inherit' }} className="hover-underline-animation" href={url}>
             {title}
           </a>
         </li>

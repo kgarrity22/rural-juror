@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Chip, Grid, Typography, useTheme } from '@mui/material';
+import { Box, Card, CardContent, Chip, Grid, Link, Typography, useTheme } from '@mui/material';
 import { useState } from 'react';
 import { projects } from './constants';
 import { ArrowOutward } from '@mui/icons-material';
@@ -29,20 +29,6 @@ export const Work = () => {
         A collection of both professional and personal projects.
         <br /> Click on a project card to see that project live.
       </Typography>
-
-      {/* <Typography
-        variant="caption"
-        sx={{
-          fontSize: 12,
-          maxWidth: 200,
-          opacity: 0,
-          animation: animation,
-          animationDelay: '1.1s'
-          // transition: 'opacity 0.3s'
-        }}
-      >
-        A collection of both professional and personal projects. Click on a project card to see that project live.
-      </Typography> */}
       <Box sx={{ opacity: 0, animation, animationDelay: '1.1s', mt: theme.spacing(2) }}>
         {projects.map((p) => (
           <Box
@@ -65,7 +51,7 @@ export const Work = () => {
 const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
   const theme = useTheme();
   return (
-    <a href={project.website} style={{ textDecoration: 'none' }}>
+    <Link href={project.website} style={{ textDecoration: 'none' }}>
       <Card
         elevation={0}
         sx={{
@@ -124,6 +110,7 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
               <Box sx={{ mb: theme.spacing(1) }}>
                 {project.technologies.map((t) => (
                   <Chip
+                    key={t}
                     sx={{
                       mr: theme.spacing(1),
                       fontFamily: 'Inter',
@@ -136,18 +123,10 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
               </Box>
 
               <Typography variant="body1">{project.longDescription}</Typography>
-
-              {project.code && (
-                <a href={project.code} style={{ color: '#000' }}>
-                  <Typography variant="h4" sx={{ fontSize: 12 }}>
-                    Source Code
-                  </Typography>
-                </a>
-              )}
             </Grid>
           </Grid>
         </CardContent>
       </Card>
-    </a>
+    </Link>
   );
 };

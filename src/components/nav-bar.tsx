@@ -66,6 +66,8 @@ export const TopNavBar = () => {
                 sx={{ mr: theme.spacing(0.5) }}
                 onClick={colorMode.toggleColorMode}
                 aria-label="dark-light-mode-toggle"
+                // TODO: change the color of the icon when the menu is open
+                // should we have some kind of hook that tells us when the menu is open & controls it?
               >
                 {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
               </IconButton>

@@ -1,9 +1,7 @@
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Z_INDICES } from '../constants';
 
 export const CustomCursor = () => {
-  const theme = useTheme();
   const trailingSpeed = 8;
 
   const options = {
@@ -118,7 +116,7 @@ export const CustomCursor = () => {
 
   //
   useEffect(() => {
-    const clickable = document.querySelectorAll('a, h1');
+    const clickable = document.querySelectorAll('a, li, button');
 
     clickable.forEach((clickableElement) => {
       clickableElement.addEventListener('mouseover', () => {
@@ -165,7 +163,8 @@ export const CustomCursor = () => {
   }, []);
 
   const styles = {
-    zIndex: Z_INDICES[3],
+    // zIndex: Z_INDICES[3] + 1,
+    zIndex: 100000,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
