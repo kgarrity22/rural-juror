@@ -1,11 +1,10 @@
-import { AppBar, Box, IconButton, Toolbar, useTheme, Typography, useMediaQuery, Container } from '@mui/material';
+import { AppBar, Box, IconButton, Toolbar, useTheme } from '@mui/material';
 import { useContext, useEffect, useState } from 'react';
 import { ColorModeContext } from '../main';
 import { AnimatedMenuIcon } from '.';
 import { AnimatedNameButton } from '../features/home/components/animated-name';
 import { Brightness7, Brightness4 } from '@mui/icons-material';
 import { Menu } from '../features/menu';
-import { Menu as MenuIcon, Brightness4 as LightModeIcon, Home as HomeIcon } from '@mui/icons-material';
 
 // want to move the show menu to context
 export const TopNavBar = () => {
@@ -36,43 +35,36 @@ export const TopNavBar = () => {
   return (
     <Box>
       <AppBar position="fixed" sx={{ background: 'transparent', boxShadow: 'none' }}>
-        <Toolbar
-          sx={{
-            mt: 1,
-            justifyContent: 'space-between',
-            transition: 'all 0.3s ease'
-          }}
-        >
+        <Toolbar disableGutters>
           <Box
-            maxWidth="md"
             sx={{
-              pl: scrolled ? 0 : '10%',
-              pr: scrolled ? 0 : '10%',
-              transition: 'all 0.3s ease',
-              display: 'flex',
-              justifyContent: 'space-between',
-              width: '100%'
+              transition: 'left 0.5s ease',
+              position: 'fixed',
+              left: scrolled ? theme.spacing(1) : '10%',
+              top: theme.spacing(2)
             }}
           >
-            <Box>
-              <AnimatedNameButton />
-            </Box>
+            <AnimatedNameButton />
+          </Box>
 
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center'
-              }}
+          <Box
+            sx={{
+              transition: 'right 0.5s ease',
+              display: 'flex',
+              justifyContent: 'center',
+              position: 'fixed',
+              right: scrolled ? theme.spacing(1) : '10%',
+              top: theme.spacing(2)
+            }}
+          >
+            <IconButton
+              sx={{ mr: theme.spacing(0.5) }}
+              onClick={colorMode.toggleColorMode}
+              aria-label="dark-light-mode-toggle"
             >
-              <IconButton
-                sx={{ mr: theme.spacing(0.5) }}
-                onClick={colorMode.toggleColorMode}
-                aria-label="dark-light-mode-toggle"
-              >
-                {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
-              </IconButton>
-              <AnimatedMenuIcon showMenu={showMenu} onClick={() => setShowMenu(!showMenu)} />
-            </Box>
+              {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
+            </IconButton>
+            <AnimatedMenuIcon showMenu={showMenu} onClick={() => setShowMenu(!showMenu)} />
           </Box>
         </Toolbar>
       </AppBar>

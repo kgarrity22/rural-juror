@@ -55,8 +55,18 @@ export const Layout = () => {
           <AnimatedBackground5 />
         </Box>
       </Box>
-      <Box sx={{ ml: '10%', mr: '10%' }}>
-        <Container maxWidth="md">
+      <Box
+        sx={{
+          ml: '10%',
+          mr: '10%',
+          padding: 0,
+          justifyContent: 'center',
+          display: 'flex',
+          mt: { xs: theme.spacing(10), sm: theme.spacing(20), md: theme.spacing(25) },
+          mb: theme.spacing(10)
+        }}
+      >
+        <Container disableGutters maxWidth="md" sx={{ padding: 0, m: 0 }}>
           <Outlet />
         </Container>
       </Box>

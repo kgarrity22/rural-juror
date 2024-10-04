@@ -1,157 +1,180 @@
-import { Box, Chip, Fade, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Card, CardContent, Chip, Grid, Typography, useTheme } from '@mui/material';
 import { useState } from 'react';
+import { projects } from './constants';
+import { ArrowOutward } from '@mui/icons-material';
+import { ProjectFilter, SingleProject } from './types';
 
-// this is my research profile
-const orcId = 'https://orcid.org/0000-0002-9875-0074';
+const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
-type SingleProject = {
-  shortTitle: string;
-  longTitle: string;
-  shortDescription: string;
-  longDescription: string;
-  image: string;
-  code: string;
-  website: string;
-  demo: string;
-  id: string;
-  type: ('paper' | 'work' | 'dataviz' | 'iOS')[];
-};
+// run this on chip click
+const filterProjects = (projects: any[], selected: 'all' | 'dataviz' | 'research' | 'app') =>
+  selected === 'all' ? projects : projects.filter((project) => project.type.includes(selected));
 
 export const Work = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
-  const workHistory = [
-    { id: 'work1', description: 'work1', title: 'Work 1' },
-    { id: 'work2', description: 'work2', title: 'Work2' },
-    { id: 'work3', description: 'work3', title: 'Work3' },
-    { id: 'work4', description: 'work4', title: 'Work4' },
-    { id: 'work5', description: 'work5', title: 'work5' }
-  ];
+
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
 
-  return (
-    <Box sx={{ mt: theme.spacing(10) }}>
-      <Typography variant="h1">Work</Typography>
+  const [selectedFilter, setSelectedFilter] = useState('all');
 
-      <Box display="flex">
-        <Box
-          sx={{
-            width: selectedProject && !isMobile ? '60%' : '100%',
-            pr: 3,
-            transition: 'width .7s ease-in-out',
-            //
-            overflow: 'scroll'
-          }}
-        >
-          {workHistory.map((work) => (
-            <SingleWorkBlock
-              key={work.id}
-              work={work}
-              isSelected={selectedProject === work.id}
-              setSelected={setSelectedProject}
+  const filters: ProjectFilter[] = [
+    { category: 'all', title: 'All' },
+    { category: 'app', title: 'Apps' },
+    { category: 'dataviz', title: 'DataViz' },
+    { category: 'research', title: 'Research' }
+  ];
+
+  const [projectsToDisplay, setProjectsToDisplay] = useState(projects);
+
+  return (
+    <Box
+      sx={
+        {
+          // mt: { xs: theme.spacing(10), sm: theme.spacing(20), md: theme.spacing(25) },
+          // // mr: { md: theme.spacing(5) },
+          // // ml: { md: theme.spacing(5) },
+          // mb: theme.spacing(10)
+        }
+      }
+    >
+      <Typography variant="h1" sx={{ opacity: 0, animation, animationDelay: '1s', mb: theme.spacing(1) }}>
+        Projects
+      </Typography>
+      <Typography
+        variant="body1"
+        sx={{ fontSize: 12, mb: theme.spacing(2), maxWidth: 300, opacity: 0, animation, animationDelay: '1.1s' }}
+      >
+        A collection of both professional and personal projects. Use the filters below to narrow th
+      </Typography>
+      <Box sx={{ opacity: 0, animation, animationDelay: '1.1s' }}>
+        {/* <Box display="flex" sx={{ mb: theme.spacing(2) }}>
+          {filters.map((filter) => (
+            <Chip
+              sx={{
+                borderRadius: theme.spacing(0.5),
+                bgcolor: filter.category === selectedFilter ? '#333' : '#fff',
+                color: filter.category === selectedFilter ? '#fff' : '#333',
+                mr: theme.spacing(1),
+                fontFamily: 'Inter',
+                height: 28,
+                fontWeight: 500
+              }}
+              label={filter.title}
+              onClick={() => {
+                setSelectedFilter(filter.category);
+                setProjectsToDisplay(filterProjects(projects, filter.category));
+              }}
             />
           ))}
-        </Box>
-
-        {!isMobile && (
+        </Box> */}
+        {projectsToDisplay.map((p) => (
           <Box
+            onMouseEnter={() => setSelectedProject(p.shortTitle)}
+            onMouseLeave={() => setSelectedProject(null)}
+            key={p.shortTitle}
             sx={{
-              background: '#fff',
-              width: selectedProject ? '40%' : 0,
-              opacity: selectedProject ? 1 : 0,
-              transition: 'opacity 0.5s ease-in-out 0.5s',
-              borderRadius: 3
-              // overflow: 'scroll',
-              // maxHeight: 600
-              //
-              // position: 'fixed',
-              // bottom: 0
+              transition: 'opacity 0.3s',
+              opacity: selectedProject !== null && p.shortTitle !== selectedProject ? 0.7 : 1
             }}
           >
-            {/** An Image will go in here */}
+            <SingleWorkBlock project={p} />
           </Box>
-        )}
+        ))}
       </Box>
     </Box>
   );
 };
 
-const SingleWorkBlock = ({
-  work,
-  isSelected,
-  setSelected
-}: {
-  isSelected: boolean;
-  setSelected: (s: string | null) => void;
-  work: { id: string; description: string; title: string };
-}) => {
-  const selectedProps = isSelected
-    ? { height: 300 }
-    : {
-        height: 50,
-        cursor: 'pointer',
-        alignItems: 'center',
-        // display: 'flex',
-        ':hover': { background: '#ffffff40', '& .MuiChip-root': { background: '#fff' } }
-      };
+const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
+  const theme = useTheme();
   return (
-    <Box
-      onClick={() => (isSelected ? setSelected(null) : setSelected(work.id))}
-      sx={{
-        borderTop: '1px solid #333333',
-        color: '#333',
-        transition: 'height 0.5s ease-in-out',
-        ...selectedProps
-      }}
-    >
-      <Fade in={!isSelected} timeout={isSelected ? 0 : 1000}>
-        <Box
-          sx={{
-            ml: 2,
-            mr: 2,
-            display: 'flex',
-            alignItems: 'center',
-            height: isSelected ? 0 : '100%'
-          }}
-        >
-          <Typography variant="h4" sx={{ textTransform: 'uppercase' }}>
-            {work.title}
-          </Typography>
-          {/* <Box>
-            <Chip sx={{ mr: 1 }} label="Technology1" variant="filled" />
-            <Chip sx={{ mr: 1 }} label="Technology2" variant="filled" />
-            <Chip sx={{ mr: 1 }} label="Technology3" variant="filled" />
-          </Box> */}
-        </Box>
-      </Fade>
+    <a href={project.website} style={{ textDecoration: 'none' }}>
+      <Card
+        elevation={0}
+        sx={{
+          animation,
+          opacity: 0,
+          animationDelay: '1.2s',
+          //
+          width: '100%',
+          background: 'transparent',
+          //
 
-      {/*  */}
+          // color: '#fff',
+          mb: theme.spacing(1),
+          border: '1px solid rgba( 255, 255, 255, 0.18 )',
+          // backgroundImage: 'linear-gradient(rgb(0 0 0/40%) 0 0)',
+          //
+          '& .MuiTypography-h5': {
+            mb: theme.spacing(0)
+          },
 
-      <Fade in={isSelected} timeout={isSelected ? 1000 : 0} style={{ transitionDelay: isSelected ? '0.5s' : '0s' }}>
-        <Box
-          sx={{
-            ml: 2,
-            mr: 2
-          }}
-        >
-          <Typography variant="h4" sx={{ textTransform: 'uppercase' }}>
-            {work.title}
-          </Typography>
-          <Box>
-            <Chip sx={{ mr: 1 }} label="Technology1" variant="filled" />
-            <Chip sx={{ mr: 1 }} label="Technology2" variant="filled" />
-            <Chip sx={{ mr: 1 }} label="Technology3" variant="filled" />
-          </Box>
-          <Box>
-            <Typography>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-              industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-              scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged.
-            </Typography>
-          </Box>
-        </Box>
-      </Fade>
-    </Box>
+          ':hover': {
+            background: 'rgba(255, 255, 255, 0.15)',
+            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+            backdropFilter: 'blur(18px)',
+            WebkitBackdropFilter: 'blur(18px)',
+            border: '1px solid rgba(255, 255, 255, 0.18)',
+            '& .MuiSvgIcon-root': {
+              transform: 'translate(50%, -20%)'
+            },
+            '& .MuiTypography-h5': {
+              textDecoration: 'underline'
+            }
+          }
+        }}
+      >
+        <CardContent>
+          <Grid direction="row-reverse" container columnSpacing={2}>
+            <Grid item xs={12} sm={5}>
+              <img
+                src={project.image}
+                style={{
+                  objectFit: 'contain',
+                  width: '100%',
+                  maxHeight: 270,
+                  borderRadius: theme.spacing(1)
+                }}
+              />
+            </Grid>
+            <Grid item xs={12} sm={7}>
+              <Box display="flex">
+                <Typography
+                  sx={{ fontWeight: 'bold', fontFamily: 'Inter Tight', mb: theme.spacing(1) }}
+                  variant="h5"
+                  // className="hover-underline-animation"
+                >
+                  {project.longTitle || project.shortTitle}
+                </Typography>
+                <ArrowOutward
+                  sx={{
+                    fontSize: 20,
+                    alignSelf: 'center',
+                    transition: 'transform 0.2s ease'
+                  }}
+                />
+              </Box>
+              <Box sx={{ mb: theme.spacing(1) }}>
+                {project.technologies.map((t) => (
+                  <Chip sx={{ mr: theme.spacing(1), fontFamily: 'Inter', height: 24, fontSize: 10 }} label={t} />
+                ))}
+              </Box>
+
+              <Typography variant="body1" sx={{ fontFamily: 'Inter', fontSize: 14 }}>
+                {project.longDescription}
+              </Typography>
+
+              {project.code && (
+                <a href={project.code} style={{ color: '#000' }}>
+                  <Typography variant="h4" sx={{ fontSize: 12 }}>
+                    Source Code
+                  </Typography>
+                </a>
+              )}
+            </Grid>
+          </Grid>
+        </CardContent>
+      </Card>
+    </a>
   );
 };

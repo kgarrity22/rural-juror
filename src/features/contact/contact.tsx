@@ -10,12 +10,14 @@ export const Contact = () => {
   return (
     <Box>
       <Box
-        sx={{
-          maxWidth: 1000,
-          mt: { xs: theme.spacing(10), sm: theme.spacing(20), md: theme.spacing(25) },
-          mr: { md: theme.spacing(5) },
-          ml: { md: theme.spacing(5) }
-        }}
+        sx={
+          {
+            // maxWidth: 1000,
+            // mt: { xs: theme.spacing(10), sm: theme.spacing(20), md: theme.spacing(25) },
+            // mr: { md: theme.spacing(5) },
+            // ml: { md: theme.spacing(5) }
+          }
+        }
       >
         <Typography variant="h1" sx={{ opacity: 0, animation, animationDelay: '1s' }}>
           Contact
@@ -69,7 +71,7 @@ export const Contact = () => {
           </ul>
 
           <Box sx={{ mt: theme.spacing(5), opacity: 0, animation, animationDelay: '1.3s' }}>
-            <Typography variant="h6">Or follow along: </Typography>
+            <Typography variant="h5">Or follow along: </Typography>
             <SocialsList
               socialLinks={[
                 { title: 'LinkedIn', url: KATHLEEN_SOCIALS.linkedIn },

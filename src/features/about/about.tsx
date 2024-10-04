@@ -8,16 +8,18 @@ export const About = () => {
   return (
     <Box display="flex" justifyContent="center">
       <Box
-        sx={{
-          mt: {
-            xs: theme.spacing(10),
-            sm: theme.spacing(20),
-            md: theme.spacing(25)
-          },
-          mr: { md: theme.spacing(5) },
-          ml: { md: theme.spacing(5) },
-          maxWidth: 1000
-        }}
+        sx={
+          {
+            // mt: {
+            //   xs: theme.spacing(10),
+            //   sm: theme.spacing(20),
+            //   md: theme.spacing(25)
+            // },
+            // mr: { md: theme.spacing(5) },
+            // ml: { md: theme.spacing(5) },
+            // maxWidth: 1000
+          }
+        }
       >
         <Grid container columnSpacing={5} direction="row-reverse">
           <Grid item sm={12} md={5}>
