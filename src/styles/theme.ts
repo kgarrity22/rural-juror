@@ -65,17 +65,23 @@ export const oldThemeOptions: (mode: PaletteMode) => ThemeOptions = (mode) => ({
     },
     h1: {
       fontFamily: 'Coolvetica',
-      fontWeight: 200
+      fontWeight: 200,
+      '@media (max-width:720px)': {
+        fontSize: '4rem'
+      }
     },
     h2: {
       fontFamily: 'Inter'
     },
     h3: {
-      fontFamily: 'Courier Prime'
+      fontFamily: 'Urbanist',
+      fontWeight: 200,
+      fontSize: '2.125rem'
     },
     h4: {
       fontFamily: 'Urbanist',
-      fontWeight: 200
+      fontWeight: 200,
+      fontSize: 30
     },
     h5: {
       fontFamily: 'Urbanist',
@@ -120,5 +126,15 @@ export const oldThemeOptions: (mode: PaletteMode) => ThemeOptions = (mode) => ({
     }
   }
 });
+
+// theme.typography.h3 = {
+//   fontSize: '1.2rem',
+//   '@media (min-width:600px)': {
+//     fontSize: '1.5rem'
+//   },
+//   [theme.breakpoints.up('md')]: {
+//     fontSize: '2.4rem'
+//   }
+// };
 
 export const basicTheme = (mode: PaletteMode) => createTheme(oldThemeOptions(mode));

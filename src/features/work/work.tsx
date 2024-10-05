@@ -26,8 +26,7 @@ export const Work = () => {
           fontWeight: 'bold'
         }}
       >
-        A collection of both professional and personal projects.
-        <br /> Click on a project card to see that project live.
+        A collection of both professional and personal projects. Click on a project card to see that project live.
       </Typography>
       <Box sx={{ opacity: 0, animation, animationDelay: '1.1s', mt: theme.spacing(2) }}>
         {projects.map((p) => (

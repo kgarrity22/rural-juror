@@ -33,7 +33,7 @@ export const Menu = ({ showMenu, setShowMenu }: { showMenu: boolean; setShowMenu
         ...menuStyles
       }}
     >
-      <Box sx={{ mt: 15, mb: 3, ml: '20%', mr: '20%' }}>
+      <Box sx={{ mt: 15, mb: 3, ml: { sm: '20%', xs: '10%' }, mr: { sm: '20%', xs: '10%' } }}>
         {menuItems.map(({ name, route }, i) => (
           <Typography
             className="hover-underline-animation"

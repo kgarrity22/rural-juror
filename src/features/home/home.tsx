@@ -1,11 +1,14 @@
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { TypewriterHeader } from './components/typwriter-header';
 import { HoverUnderlineText } from '../../components/hover-underline-text';
+import { Link } from 'react-router-dom';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
 export const Home = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const fontVariant = isMobile ? 'h4' : 'h3';
 
   return (
     <Box>
@@ -28,26 +31,30 @@ export const Home = () => {
           opacity: 0
         }}
       >
-        <Typography variant="h4" component="span">
+        <Typography variant={fontVariant} component="span">
           I'm Kathleen Garrity, a full-stack software engineer with a passion for creating products that are engaging,
           accessible, and fun to use. Learn more{' '}
         </Typography>
-        <HoverUnderlineText
-          text="about me"
-          component="span"
-          variant="h4"
-          sx={{ cursor: 'pointer', fontWeight: 'bold' }}
-        />
-        <Typography variant="h4" component="span">
+        <Link to="/about" style={{ textDecoration: 'none' }}>
+          <HoverUnderlineText
+            text="about me"
+            component="span"
+            variant={fontVariant}
+            sx={{ cursor: 'pointer', fontWeight: 'bold' }}
+          />
+        </Link>
+        <Typography variant={fontVariant} component="span">
           {' '}
           or{' '}
         </Typography>
-        <HoverUnderlineText
-          text="check out my work."
-          component="span"
-          variant="h4"
-          sx={{ cursor: 'pointer', fontWeight: 'bold' }}
-        />
+        <Link to="/projects" style={{ textDecoration: 'none' }}>
+          <HoverUnderlineText
+            text="check out my work."
+            component="span"
+            variant={fontVariant}
+            sx={{ cursor: 'pointer', fontWeight: 'bold' }}
+          />
+        </Link>
       </Box>
     </Box>
   );

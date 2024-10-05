@@ -24,21 +24,21 @@ export const SocialIcons = ({
   };
   return (
     <>
-      <a href={KATHLEEN_SOCIALS.linkedIn}>
+      <a href={KATHLEEN_SOCIALS.linkedIn} target="_blank">
         <LinkedIn sx={{ ...commonStyles, ml: 0 }} />
       </a>
-      <a href={KATHLEEN_SOCIALS.github}>
+      <a href={KATHLEEN_SOCIALS.github} target="_blank">
         <GitHub sx={commonStyles} />
       </a>
-      <a href={KATHLEEN_SOCIALS.email}>
+      <a href={KATHLEEN_SOCIALS.email} target="_blank">
         <Send sx={commonStyles} />
       </a>
-      <a href={KATHLEEN_SOCIALS.orcId}>
+      <a href={KATHLEEN_SOCIALS.orcId} target="_blank">
         <Box sx={commonStyles}>
           <FontAwesomeIcon size="xl" icon={faOrcid} />
         </Box>
       </a>
-      <a href={KATHLEEN_SOCIALS.codePen}>
+      <a href={KATHLEEN_SOCIALS.codePen} target="_blank">
         <Box sx={commonStyles}>
           <FontAwesomeIcon size="xl" icon={faCodepen} />
         </Box>

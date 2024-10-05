@@ -6,30 +6,27 @@ export const AnimatedNameButton = () => {
   const navigate = useNavigate();
 
   return (
-    <Box>
-      <Box display="flex" flexDirection="column" onClick={() => navigate('/home')} sx={{ cursor: 'pointer' }}>
-        <Typography
-          variant="h4"
-          sx={{
-            fontFamily: 'Modak',
-            transition: 'all 0.5s',
-            '-webkit-text-stroke': '2px #d6f4f4',
-            fontSize: '2rem',
-            textAlign: 'center',
-            color: 'transparent',
-            textShadow: `
+    <Box onClick={() => navigate('/home')} sx={{ cursor: 'pointer' }}>
+      <Typography
+        sx={{
+          fontFamily: 'Modak',
+          transition: 'all 0.5s',
+          '-webkit-text-stroke': '2px #d6f4f4',
+          fontSize: '2rem',
+          textAlign: 'center',
+          color: 'transparent',
+          textShadow: `
               0px 0px 0px #e601c0,
               3px 3px 3px #482896`,
-            cursor: 'pointer',
-            ':hover': {
-              textShadow: 'none',
-              '-webkit-text-stroke': '2px #4a494a'
-            }
-          }}
-        >
-          KG
-        </Typography>
-      </Box>
+          cursor: 'pointer',
+          ':hover': {
+            textShadow: 'none',
+            '-webkit-text-stroke': '2px #4a494a'
+          }
+        }}
+      >
+        KG
+      </Typography>
     </Box>
   );
 };

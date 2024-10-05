@@ -1,13 +1,14 @@
-import { Box, Grid, Typography, useTheme } from '@mui/material';
+import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import me from './assets/me.png';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
 export const About = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <Box display="flex" justifyContent="center">
-      <Grid container columnSpacing={1} direction="row-reverse">
+      <Grid container columnSpacing={1}>
         <Grid item sm={12} md={12}>
           <img
             src={me}
@@ -15,8 +16,9 @@ export const About = () => {
             style={{
               animation,
               animationDelay: '1.1s',
-              minWidth: '300px',
-              maxWidth: '400px',
+              // objectFit: 'contain',
+              minWidth: isMobile ? 150 : 300,
+              maxWidth: isMobile ? 200 : 400,
               borderRadius: theme.spacing(2),
               opacity: 0
             }}
@@ -29,7 +31,6 @@ export const About = () => {
               opacity: 0,
               animation,
               animationDelay: '1s'
-              //
             }}
           >
             I'm Kathleen

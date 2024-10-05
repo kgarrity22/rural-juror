@@ -6,7 +6,7 @@ export const Z_INDICES = {
 };
 
 export const KATHLEEN_SOCIALS = {
-  linkedIn: 'www.linkedin.com/in/kathleen-garrity-3521a0172',
+  linkedIn: 'https://www.linkedin.com/in/kathleen-garrity-3521a0172',
   github: 'https://github.com/kgarrity22',
   email: 'mailto:kathleen.garrity223@gmail.com',
   orcId: 'https://orcid.org/0000-0002-9875-0074',
