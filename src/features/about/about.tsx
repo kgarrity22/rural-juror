@@ -1,5 +1,5 @@
 import { Box, Grid, Typography, useTheme } from '@mui/material';
-import me from './assets/me.jpeg';
+import me from './assets/me.png';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
@@ -7,21 +7,22 @@ export const About = () => {
   const theme = useTheme();
   return (
     <Box display="flex" justifyContent="center">
-      <Grid container columnSpacing={5} direction="row-reverse">
-        <Grid item sm={12} md={5}>
+      <Grid container columnSpacing={1} direction="row-reverse">
+        <Grid item sm={12} md={12}>
           <img
             src={me}
-            alt="A photo of me, Kathleen, giving a thumbs up"
+            alt="A photo of me"
             style={{
               animation,
               animationDelay: '1.1s',
-              width: '300px',
-              borderRadius: theme.spacing(1),
+              minWidth: '300px',
+              maxWidth: '400px',
+              borderRadius: theme.spacing(2),
               opacity: 0
             }}
           />
         </Grid>
-        <Grid item sm={12} md={7}>
+        <Grid item sm={12} md={12}>
           <Typography
             variant="h1"
             sx={{

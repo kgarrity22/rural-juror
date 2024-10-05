@@ -27,9 +27,7 @@ export const Layout = () => {
           left: 0,
           right: 0,
           zIndex: Z_INDICES[0],
-
           background: theme.palette.mode === 'light' ? '#fff7e3' : '#333' // can prob just do the dark for now
-          // background: '#000000' // TODO: change all colors for dark mode or just change background tinge
         }}
       >
         <Box
