@@ -1,30 +1,42 @@
-# React + TypeScript + Vite
+# Portfolio website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+A portfolio website to showcase my work & share a little about me. 
+This is also where I like to test out different interaction, animation, and design techniques. 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Built With
 
-## Expanding the ESLint configuration
+* [![React][React.js]][React-url]
+* [![Material UI][Material-ui]][Material-url]
+* [![Vite][Vite]][Vite-url]
+* [![Vercel][Vercel]][Vercel-url]
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Contact
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Kathleen Garrity
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+kathleen.garrity223@gmail.com
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [Google Fonts](https://fonts.google.com/)
+* [Font Awesome Icons](https://fontawesome.com/icons)
+* [The Rural Juror](https://en.wikipedia.org/wiki/The_Rural_Juror)
+
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Material-UI]: https://img.shields.io/badge/mui-20232A?style=for-the-badge&logo=mui&logoColor=007FFF
+[Material-url]: https://mui.com/material-ui/
+[Vite]: https://img.shields.io/badge/vite-20232A?style=for-the-badge&logo=vite&logoColor=646CFF
+[Vite-url]: https://vitejs.dev/
+[Vercel]:https://img.shields.io/badge/Vercel-%23000000.svg?logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com/
