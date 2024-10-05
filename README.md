@@ -1,4 +1,7 @@
 # Portfolio website
+[kathleengarrity.com](https://www.kathleengarrity.com/)
+<img width="891" alt="Screen Shot 2024-10-05 at 3 31 21 PM" src="https://github.com/user-attachments/assets/f6d3ee54-8ecd-43fe-9b11-9a64b63e34b9">
+
 
 ## Description
 A portfolio website to showcase my work & share a little about me. 
