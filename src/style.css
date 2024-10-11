@@ -163,3 +163,7 @@
 .blinking-cursor {
   animation: blink 1s linear infinite;
 }
+
+a {
+  color: #4a494a;
+}

@@ -3,8 +3,17 @@ import { Box, Typography, useTheme } from '@mui/material';
 import { KATHLEEN_SOCIALS } from '../../constants';
 import { SocialsList } from '../../components/social-icons';
 import { HoverUnderlineText } from '../../components/hover-underline-text';
+import res from '../../assets/KGCV2024.pdf';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
+
+const downloadCV = () => {
+  // set link properties
+  let alink = document.createElement('a');
+  alink.href = res;
+  alink.download = 'KathleenGarrityResume.pdf';
+  alink.click();
+};
 
 export const Contact = () => {
   const theme = useTheme();
@@ -21,12 +30,15 @@ export const Contact = () => {
               display="flex"
               alignItems="center"
               sx={{
+                textDecoration: 'none',
                 ':hover': {
                   '& .MuiSvgIcon-root': {
                     animation: 'send 1s cubic-bezier(0.5, 1, 0.89, 1) infinite alternate'
                   }
                 }
               }}
+              component="a"
+              href="mailto:kathleen.garrity223@gmail.com"
             >
               <HoverUnderlineText variant="h6" sx={{ fontWeight: 400, cursor: 'pointer' }} text="Shoot me an email" />
               <Send sx={{ ml: theme.spacing(1), transform: 'rotate(-35deg)' }} />
@@ -46,11 +58,12 @@ export const Contact = () => {
                   }
                 }
               }}
+              onClick={() => downloadCV()}
             >
               <HoverUnderlineText
                 variant="h6"
                 sx={{ fontWeight: 400, cursor: 'pointer' }}
-                text="Download my CVl"
+                text="Download my CV"
                 color="inherit"
               />
               <ArrowDownward />
