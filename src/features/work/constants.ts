@@ -1,22 +1,24 @@
 import prismKF from '../../assets/work/prism-kf-2.png';
 import impactHeatmap from '../../assets/work/imapct-heatmap.gif';
 import opioidPaper from '../../assets/work/opioid-paper.gif';
-import prismAppV1 from '../../assets/work/prism-app-v1.png';
+// import prismAppV1 from '../../assets/work/prism-app-v1.png';
 import prismCharts from '../../assets/work/prism-charts.gif';
-import travelWise from '../../assets/work/travelwise-placeview.png';
 import vizAccessibility from '../../assets/work/viz-accessibility.png';
+import vizGallery from '../../assets/work/viz-gallery.png';
+import rps from '../../assets/work/rps.png';
 import { SingleProject } from './types';
 
 export const projects: SingleProject[] = [
   {
-    id: 'prism-app-v1',
-    shortTitle: 'Prism App V1',
+    id: 'viz-gallery',
+    shortTitle: 'DataViz Gallery',
     longDescription:
-      'The Prism Platform is a biomedical research web application that allows researchers and scientists to create interactive data landscapes and reports. Users can upload, search, and explore their data with filters and engaging, interactive visualizations. As a member of a small team of engineers, I was responsible for building various data visualizations, secure endpoints, permissions structures, and UI components.',
-    image: prismAppV1,
-    website: 'https://app.prism.bio/',
-    type: ['app'],
-    technologies: ['Typescript', 'React', 'Next.js', 'Prisma']
+      "A collection of data visualizations I've created with different javascript libraries to explore interesting datasets and data visualization techniques. Datasets range from popular halloween candy types to Boston Celtics championships to market cap of top public companies.",
+    image: vizGallery,
+    website: 'https://viz-iota-two.vercel.app/',
+    code: 'https://github.com/kgarrity22/chorts',
+    type: ['dataviz'],
+    technologies: ['D3.js', 'Vega', 'Vega-lite', 'Observable']
   },
   {
     id: 'prism-kf',
@@ -36,8 +38,29 @@ export const projects: SingleProject[] = [
     image: prismCharts,
     website: 'https://www.prism.bio/',
     type: ['app', 'dataviz'],
-    technologies: ['Vega', 'Sigma', 'D3', 'Storybook']
+    technologies: ['Vega', 'Sigma', 'D3.js', 'Storybook']
   },
+  {
+    id: 'opioid-paper',
+    shortTitle: 'Opioid Use Evidence Map',
+    longTitle: 'Opioid Use Disorder Treatments: An Evidence Map',
+    longDescription:
+      'When researchers at NYU Langone’s Lee Lab wanted a better way to visualize the gaps in opioid use disorder research, the Prism team collaborated with them to create this interactive evidence map. We worked to create an engaging interactive data landscape that allowed users to easily see high level trends while also allowing them to filter and drill down into a more detailed view of individual data points. ',
+    image: opioidPaper,
+    website: 'https://med.nyu.edu/research/lee-lab/research/opioid-use-disorder-treatment-evidence-map',
+    type: ['research'],
+    technologies: ['Vega', 'React']
+  },
+  // {
+  //   id: 'prism-app-v1',
+  //   shortTitle: 'Prism App V1',
+  //   longDescription:
+  //     'The Prism Platform is a biomedical research web application that allows researchers and scientists to create interactive data landscapes and reports. Users can upload, search, and explore their data with filters and engaging, interactive visualizations. As a member of a small team of engineers, I was responsible for building various data visualizations, secure endpoints, permissions structures, and UI components.',
+  //   image: prismAppV1,
+  //   website: 'https://app.prism.bio/',
+  //   type: ['app'],
+  //   technologies: ['Typescript', 'React', 'Next.js', 'Prisma']
+  // },
   {
     id: 'impact-heatmap',
     shortTitle: 'Impact Heatmap',
@@ -61,25 +84,14 @@ export const projects: SingleProject[] = [
     technologies: ['Pandas', 'Altair', 'Excel']
   },
   {
-    id: 'opioid-paper',
-    shortTitle: 'Opioid Use Evidence Map',
-    longTitle: 'Opioid Use Disorder Treatments: An Evidence Map',
+    id: 'rock-paper-scissors-game',
+    shortTitle: 'Rock, Paper, Scissors Game',
+    longTitle: 'Rock, Paper, Scissors Animated App',
     longDescription:
-      'When researchers at NYU Langone’s Lee Lab wanted a better way to visualize the gaps in opioid use disorder research, the Prism team collaborated with them to create this interactive evidence map. We worked to create an engaging interactive data landscape that allowed users to easily see high level trends while also allowing them to filter and drill down into a more detailed view of individual data points. ',
-    image: opioidPaper,
-    website: 'https://med.nyu.edu/research/lee-lab/research/opioid-use-disorder-treatment-evidence-map',
-    type: ['research'],
-    technologies: ['Vega', 'React']
-  },
-  {
-    id: 'travelwise',
-    shortTitle: 'TravelWise',
-    longDescription:
-      'TravelWise is an iOS app I built as a part of a Swift course. Powered by Firebase and Google’s MLKit, TravelWise allows users to take a photo of any historical landmark and instantly see historical information about that landmark. Users can also track and add their own notes about different places they have visited.',
-    image: travelWise,
-    website: 'https://github.com/kgarrity22/TravelWise',
-    code: 'https://github.com/kgarrity22/TravelWise',
-    type: ['app'],
-    technologies: ['Swift', 'Firebase', 'MLKit']
+      'A simple animated version of the classic rock, paper, scissors game. The win/loss/tie record is saved in local storage so users can see their win ratio over time.', // TODO
+    image: rps,
+    website: 'https://rock-paper-scissors-three-neon.vercel.app/',
+    type: ['app', 'game'],
+    technologies: ['Typescript', 'React']
   }
 ];

@@ -1,5 +1,4 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
-import me from './assets/me.png';
 
 const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
@@ -10,27 +9,13 @@ export const About = () => {
     <Box display="flex" justifyContent="center">
       <Grid container columnSpacing={1}>
         <Grid item sm={12} md={12}>
-          <img
-            src={me}
-            alt="A photo of me"
-            style={{
-              animation,
-              animationDelay: '1.1s',
-              // objectFit: 'contain',
-              minWidth: isMobile ? 150 : 300,
-              maxWidth: isMobile ? 200 : 400,
-              borderRadius: theme.spacing(2),
-              opacity: 0
-            }}
-          />
-        </Grid>
-        <Grid item sm={12} md={12}>
           <Typography
             variant="h1"
             sx={{
               opacity: 0,
               animation,
-              animationDelay: '1s'
+              animationDelay: '1s',
+              mb: theme.spacing(4)
             }}
           >
             I'm Kathleen
@@ -40,7 +25,7 @@ export const About = () => {
             sx={{
               opacity: 0,
               animation,
-              animationDelay: '1.1s'
+              animationDelay: '1.2s'
             }}
           >
             I'm a fullstack engineer based in New York City. I started coding when I took my first python class in
@@ -53,7 +38,7 @@ export const About = () => {
             sx={{
               opacity: 0,
               animation,
-              animationDelay: '1.2s'
+              animationDelay: '1.4s'
             }}
           >
             I work across the full stack building everything from secure APIs and data pipelines to LLM prompts to
@@ -69,7 +54,7 @@ export const About = () => {
             sx={{
               opacity: 0,
               animation,
-              animationDelay: '1.25s'
+              animationDelay: '1.6s'
             }}
           >
             When I'm not coding or designing, you might find me running, enjoying a sunset with friends, watching some

@@ -28,18 +28,20 @@ export const Work = () => {
       >
         A collection of both professional and personal projects. Click on a project card to see that project live.
       </Typography>
-      <Box sx={{ opacity: 0, animation, animationDelay: '1.1s', mt: theme.spacing(2) }}>
-        {projects.map((p) => (
-          <Box
-            onMouseEnter={() => setSelectedProject(p.shortTitle)}
-            onMouseLeave={() => setSelectedProject(null)}
-            key={p.shortTitle}
-            sx={{
-              transition: 'opacity 0.3s',
-              opacity: selectedProject !== null && p.shortTitle !== selectedProject ? 0.7 : 1
-            }}
-          >
-            <SingleWorkBlock project={p} />
+      <Box sx={{ mt: theme.spacing(2) }}>
+        {projects.map((p, i) => (
+          <Box sx={{ opacity: 0, animation, animationDelay: `${1 + 0.3 * i}s` }}>
+            <Box
+              onMouseOver={() => setSelectedProject(p.shortTitle)}
+              onMouseOut={() => setSelectedProject(null)}
+              key={p.shortTitle}
+              sx={{
+                transition: 'opacity 0.3s',
+                opacity: selectedProject !== null && p.shortTitle !== selectedProject ? 0.7 : 1
+              }}
+            >
+              <SingleWorkBlock project={p} />
+            </Box>
           </Box>
         ))}
       </Box>

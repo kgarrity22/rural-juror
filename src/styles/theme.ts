@@ -66,6 +66,7 @@ export const oldThemeOptions: (mode: PaletteMode) => ThemeOptions = (mode) => ({
     h1: {
       fontFamily: 'Coolvetica',
       fontWeight: 200,
+      color: mode === 'dark' ? '#fff' : '#282A28',
       '@media (max-width:720px)': {
         fontSize: '4rem'
       }
