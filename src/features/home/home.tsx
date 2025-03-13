@@ -3,7 +3,7 @@ import { TypewriterHeader } from './components/typwriter-header';
 import { HoverUnderlineText } from '../../components/hover-underline-text';
 import { Link } from 'react-router-dom';
 
-const animation = 'fade-in-up-long 0.6s cubic-bezier(0.5, 1, 0.89, 1) forwards';
+const animation = 'fade-in-up-long 1s cubic-bezier(0.5, 1, 0.89, 1) forwards';
 
 export const Home = () => {
   const theme = useTheme();
@@ -17,7 +17,7 @@ export const Home = () => {
           height: { xs: 150, sm: 100 }
         }}
       >
-        <TypewriterHeader />
+        <TypewriterHeader delaySpeed={1600} startDelay={1000} />
       </Box>
       <Box
         sx={{
@@ -27,7 +27,7 @@ export const Home = () => {
           fontFamily: 'Inter Tight',
           fontWeight: 300,
           animation,
-          animationDelay: '1.2s',
+          animationDelay: '2s',
           opacity: 0
         }}
       >

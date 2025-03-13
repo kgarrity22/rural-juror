@@ -19,6 +19,7 @@ export const Typewriter = ({
   deleteSpeed = 50,
   delaySpeed = 1500,
   cursorColor = 'inherit',
+  startDelay = 1500,
   textStyles = []
 }: ComponentProps): JSX.Element => {
   const [displayText, displayStyle] = useTypewriter({
@@ -26,7 +27,8 @@ export const Typewriter = ({
     typeSpeed,
     deleteSpeed,
     delaySpeed,
-    textStyles
+    textStyles,
+    startDelay
   });
 
   return (

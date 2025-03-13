@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useReducer } from 'react';
+import { useCallback, useEffect, useRef, useReducer, useState } from 'react';
 import { SxProps } from '@mui/material';
 import { reducer } from './reducer';
 
@@ -13,6 +13,8 @@ export type TypewriterProps = {
   delaySpeed?: number;
   /*  */
   textStyles?: SxProps[];
+  /** length of pause on the very first typing render*/
+  startDelay?: number;
 };
 
 export type TypewriterHelper = {
@@ -24,6 +26,8 @@ export type TypewriterHelper = {
   isDelete: boolean;
   /** `true` if all loops are done */
   isDone: boolean;
+  /** `true` if on the delay before any words are typed */
+  isStartDelay: boolean;
 };
 
 /**
@@ -37,6 +41,7 @@ export const useTypewriter = ({
   typeSpeed = 80,
   deleteSpeed = 50,
   delaySpeed = 1500,
+  startDelay = 1500,
   textStyles = []
 }: TypewriterProps): [string, SxProps, TypewriterHelper] => {
   const [{ speed, text, count }, dispatch] = useReducer(reducer, {
@@ -51,6 +56,17 @@ export const useTypewriter = ({
   const isDelete = useRef(false);
   const isType = useRef(false);
   const isDelay = useRef(false);
+
+  const [isStartDelay, setIsStartDelay] = useState(startDelay > 0);
+
+  // on load --> start the whole effect delay
+  useEffect(() => {
+    const startTimeout = setTimeout(() => {
+      setIsStartDelay(false);
+    }, startDelay);
+
+    return () => clearTimeout(startTimeout);
+  }, [startDelay]);
 
   const handleTyping = useCallback(() => {
     const index = count % words.length;
@@ -80,12 +96,14 @@ export const useTypewriter = ({
   }, [count, delaySpeed, deleteSpeed, typeSpeed, words, text, style]);
 
   useEffect(() => {
+    if (isStartDelay) return; // if we're in the initial delay, return
+
     const typing = setTimeout(handleTyping, speed);
 
     if (isDone.current) clearTimeout(typing);
 
     return () => clearTimeout(typing);
-  }, [handleTyping, speed]);
+  }, [handleTyping, speed, isStartDelay]);
 
   return [
     text,
@@ -94,7 +112,8 @@ export const useTypewriter = ({
       isType: isType.current,
       isDelay: isDelay.current,
       isDelete: isDelete.current,
-      isDone: isDone.current
+      isDone: isDone.current,
+      isStartDelay
     }
   ];
 };

@@ -2,7 +2,17 @@ import { Box, useMediaQuery, useTheme } from '@mui/material';
 import { Typewriter } from '../../typewriter';
 import { getTimeOfDay } from '../../../utils/time-of-day';
 
-export const TypewriterHeader = () => {
+export const TypewriterHeader = ({
+  typeSpeed = 90,
+  deleteSpeed = 70,
+  delaySpeed = 1400,
+  startDelay = 1500
+}: {
+  typeSpeed?: number;
+  deleteSpeed?: number;
+  delaySpeed?: number;
+  startDelay?: number;
+}) => {
   const timeOfDayGreeting = `Good ${getTimeOfDay()}!`;
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -18,9 +28,10 @@ export const TypewriterHeader = () => {
           { fontFamily: 'Josefin Slab', fontSize: isMobile ? 45 : 65 },
           { fontFamily: 'Special Elite', fontSize: isMobile ? 40 : 60 }
         ]}
-        typeSpeed={90}
-        deleteSpeed={70}
-        delaySpeed={1400}
+        typeSpeed={typeSpeed}
+        deleteSpeed={deleteSpeed}
+        delaySpeed={delaySpeed}
+        startDelay={startDelay}
       />
     </Box>
   );
