@@ -42,10 +42,12 @@ export const About = () => {
           >
             I work across the full stack building everything from secure APIs and data pipelines to LLM prompts to
             beautiful, responsive, and accessible UIs. I enjoy building all sorts of components and endpoints, but I
-            particularly love using javascript and other tools to create interesting data visualizations. In
+            particularly love using javascript libraries and other tools to create interesting data visualizations. In
             architecting and building data visualizations, I get the chance to solve the problems I find most
             fascinating - like how to best store, slice and serve up massive datasets and how to present that data in a
-            way that communicates the message with end users in a way that is clear engaging and effective.
+            way that communicates the message with end users in a way that is clear engaging and effective. I'll work
+            with any type of data, but I'm particularly interested in exploring data related to climate change, local
+            government, and sports.
           </Typography>
           <br />
           <Typography
@@ -56,8 +58,8 @@ export const About = () => {
               animationDelay: '1.6s'
             }}
           >
-            When I'm not coding or designing, you might find me running, enjoying a sunset with friends, watching some
-            basketball, or hunting for the best bagel and iced coffee in New York.
+            When I'm not coding or designing, you might find me running, watching some basketball, or hunting for the
+            best bagel and iced coffee in New York.
           </Typography>
         </Grid>
       </Grid>
