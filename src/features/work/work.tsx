@@ -74,10 +74,10 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
             WebkitBackdropFilter: 'blur(18px)',
             border: '1px solid rgba(255, 255, 255, 0.18)',
             '& .MuiSvgIcon-root': {
-              transform: 'translate(50%, -20%)'
+              transform: project.website ? 'translate(50%, -20%)' : 0
             },
             '& .MuiTypography-h5': {
-              textDecoration: 'underline'
+              textDecoration: project.website ? 'underline' : ''
             }
           }
         }}
@@ -100,13 +100,15 @@ const SingleWorkBlock = ({ project }: { project: SingleProject }) => {
                 <Typography sx={{ fontWeight: 'bold', fontFamily: 'Inter Tight', mb: theme.spacing(1) }} variant="h5">
                   {project.longTitle || project.shortTitle}
                 </Typography>
-                <ArrowOutward
-                  sx={{
-                    fontSize: 20,
-                    alignSelf: 'center',
-                    transition: 'transform 0.2s ease'
-                  }}
-                />
+                {project.website && (
+                  <ArrowOutward
+                    sx={{
+                      fontSize: 20,
+                      alignSelf: 'center',
+                      transition: 'transform 0.2s ease'
+                    }}
+                  />
+                )}
               </Box>
               <Box sx={{ mb: theme.spacing(1) }}>
                 {project.technologies.map((t) => (

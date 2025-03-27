@@ -6,6 +6,7 @@ import prismCharts from '../../assets/work/prism-charts.gif';
 import vizAccessibility from '../../assets/work/viz-accessibility.png';
 import vizGallery from '../../assets/work/viz-gallery.png';
 import rps from '../../assets/work/rps.png';
+import diseaseSim from '../../assets/work/disease-transmission-sim.png';
 import { SingleProject } from './types';
 
 export const projects: SingleProject[] = [
@@ -21,22 +22,23 @@ export const projects: SingleProject[] = [
     technologies: ['D3.js', 'Vega', 'Vega-lite', 'Observable']
   },
   {
-    id: 'prism-kf',
-    shortTitle: 'Prism Knowledge Finder',
+    id: 'disease-sim',
+    shortTitle: 'Disease Transmission Simulator',
     longDescription:
-      'Prism Knowledge Finder is a web-based research tool that makes it fast and easy for users to search for and uncover the important information within their documents by allowing them to upload, organize, search, filter, and chat with their PowerPoints and PDFs. Building this product with a small team, I contributed to the creation of data extraction and vectorization pipelines, performant search functionality, and intuitive and responsive UIs.',
-    image: prismKF,
-    website: 'https://www.prism.bio/solutions/knowledge-finder',
-    type: ['app'],
-    technologies: ['Typescript', 'React', 'Nest.js', 'Python', 'PostgreSQL']
+      'A web application that lets users simulate how different diseases spread over a population of 1000 people. Users can select a disease and watch as the visualization updates in real time to demonstrate infection spread.',
+    image: diseaseSim,
+    website: 'https://disease-transmission-sim.vercel.app/',
+    type: ['app', 'dataviz'],
+    technologies: ['Typescript', 'React', 'Vega']
   },
+
   {
     id: 'prism-charts',
     shortTitle: 'Prism Charts',
     longDescription:
       'When a client wanted to integrate Prism’s visualizations into their own platform, I created Prism Charts, a React component library for data visualizations. Powered by various existing visualization libraries like Vega, D3, and Sigma.js, Prism Charts offers components for a wide variety of chart types and features and makes implementing complex styles and interactions incredibly fast and simple. As the lead engineer on this project, I responsible for the entire workflow from architecture and design to implementation and testing.',
     image: prismCharts,
-    website: 'https://www.prism.bio/',
+    website: '',
     type: ['app', 'dataviz'],
     technologies: ['Vega', 'Sigma', 'D3.js', 'Storybook']
   },
@@ -50,6 +52,16 @@ export const projects: SingleProject[] = [
     website: 'https://med.nyu.edu/research/lee-lab/research/opioid-use-disorder-treatment-evidence-map',
     type: ['research'],
     technologies: ['Vega', 'React']
+  },
+  {
+    id: 'prism-kf',
+    shortTitle: 'Prism Knowledge Finder',
+    longDescription:
+      'Prism Knowledge Finder is a web-based research tool that makes it fast and easy for users to search for and uncover the important information within their documents by allowing them to upload, organize, search, filter, and chat with their PowerPoints and PDFs. Building this product with a small team, I contributed to the creation of data extraction and vectorization pipelines, performant search functionality, and intuitive and responsive UIs.',
+    image: prismKF,
+    website: '',
+    type: ['app'],
+    technologies: ['Typescript', 'React', 'Nest.js', 'Python', 'PostgreSQL']
   },
   // {
   //   id: 'prism-app-v1',
