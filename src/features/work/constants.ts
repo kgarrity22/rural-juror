@@ -5,7 +5,7 @@ import opioidPaper from '../../assets/work/opioid-paper.gif';
 import prismCharts from '../../assets/work/prism-charts.gif';
 import vizAccessibility from '../../assets/work/viz-accessibility.png';
 import vizGallery from '../../assets/work/viz-gallery.png';
-import rps from '../../assets/work/rps.png';
+// import rps from '../../assets/work/rps.png';
 import diseaseSim from '../../assets/work/disease-transmission-sim.png';
 import { SingleProject } from './types';
 
