@@ -94,16 +94,16 @@ export const projects: SingleProject[] = [
     website: 'https://dl.acm.org/doi/10.1145/3491102.3517630',
     type: ['research', 'dataviz'],
     technologies: ['Pandas', 'Altair', 'Excel']
-  },
-  {
-    id: 'rock-paper-scissors-game',
-    shortTitle: 'Rock, Paper, Scissors Game',
-    longTitle: 'Rock, Paper, Scissors Animated App',
-    longDescription:
-      'A simple animated version of the classic rock, paper, scissors game. The win/loss/tie record is saved in local storage so users can see their win ratio over time.', // TODO
-    image: rps,
-    website: 'https://rock-paper-scissors-three-neon.vercel.app/',
-    type: ['app', 'game'],
-    technologies: ['Typescript', 'React']
   }
+  // {
+  //   id: 'rock-paper-scissors-game',
+  //   shortTitle: 'Rock, Paper, Scissors Game',
+  //   longTitle: 'Rock, Paper, Scissors Animated App',
+  //   longDescription:
+  //     'A simple animated version of the classic rock, paper, scissors game. The win/loss/tie record is saved in local storage so users can see their win ratio over time.', // TODO
+  //   image: rps,
+  //   website: 'https://rock-paper-scissors-three-neon.vercel.app/',
+  //   type: ['app', 'game'],
+  //   technologies: ['Typescript', 'React']
+  // }
 ];
