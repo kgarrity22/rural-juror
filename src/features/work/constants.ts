@@ -7,6 +7,7 @@ import vizAccessibility from '../../assets/work/viz-accessibility.png';
 import vizGallery from '../../assets/work/viz-gallery.png';
 // import rps from '../../assets/work/rps.png';
 import diseaseSim from '../../assets/work/disease-transmission-sim.png';
+import homonym from '../../assets/work/homonym.png';
 import { SingleProject } from './types';
 
 export const projects: SingleProject[] = [
@@ -30,6 +31,16 @@ export const projects: SingleProject[] = [
     website: 'https://disease-transmission-sim.vercel.app/',
     type: ['app', 'dataviz'],
     technologies: ['Typescript', 'React', 'Vega']
+  },
+  {
+    id: 'homonym-game',
+    shortTitle: 'Homonym!',
+    longDescription:
+      'A web app version of the 30 Rock fictional game show "Homonym!" where contestants attempt to guess which homophone is being referred to. The data and audio was scraped with Python using the Merriam-Webster API while the frontend is built with Typescript and React and elevated by various CSS animations.',
+    image: homonym,
+    website: 'https://homonym.vercel.app/',
+    type: ['app', 'game'],
+    technologies: ['Python', 'Typescript', 'React']
   },
 
   {
