@@ -1,20 +1,23 @@
-import { Box, Container, CssBaseline, useTheme } from '@mui/material';
-import { Outlet } from 'react-router-dom';
-import {
-  AnimatedBackground2,
-  AnimatedBackground3,
-  AnimatedBackground4,
-  AnimatedBackground5
-} from './animated-background';
-import { Z_INDICES } from '../constants';
-import { TopNavBar } from './nav-bar';
+// import { Box, Container, CssBaseline, useTheme } from '@mui/material';
+// import { Outlet } from 'react-router-dom';
+// import {
+//   AnimatedBackground2,
+//   AnimatedBackground3,
+//   AnimatedBackground4,
+//   AnimatedBackground5
+// } from './animated-background';
+// import { Z_INDICES } from '../constants';
+// import { TopNavBar } from './nav-bar';
+import { UnderConstructionOverlay } from './construction';
 
 export const Layout = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
+  // const isUnderConstruction = true;
 
   return (
     <>
-      <CssBaseline />
+      <UnderConstructionOverlay />
+      {/* <CssBaseline />
       <TopNavBar />
       <Box
         sx={{
@@ -67,7 +70,7 @@ export const Layout = () => {
         <Container disableGutters maxWidth="md" sx={{ padding: 0, m: 0 }}>
           <Outlet />
         </Container>
-      </Box>
+      </Box> */}
     </>
   );
 };
