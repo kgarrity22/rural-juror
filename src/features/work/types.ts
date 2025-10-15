@@ -1,4 +1,4 @@
-type ProjectType = 'research' | 'app' | 'dataviz' | 'game';
+type ProjectType = 'research' | 'app' | 'dataviz' | 'game' | 'cli tool';
 export type SingleProject = {
   shortTitle: string;
   longTitle?: string;

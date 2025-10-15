@@ -1,12 +1,14 @@
 import prismKF from '../../assets/work/prism-kf-2.png';
-import impactHeatmap from '../../assets/work/imapct-heatmap.gif';
+// import impactHeatmap from '../../assets/work/imapct-heatmap.gif';
 import opioidPaper from '../../assets/work/opioid-paper.gif';
 // import prismAppV1 from '../../assets/work/prism-app-v1.png';
 import prismCharts from '../../assets/work/prism-charts.gif';
 import vizAccessibility from '../../assets/work/viz-accessibility.png';
 import vizGallery from '../../assets/work/viz-gallery.png';
-// import rps from '../../assets/work/rps.png';
+import rps from '../../assets/work/rps.png';
 import diseaseSim from '../../assets/work/disease-transmission-sim.png';
+import homonym from '../../assets/work/homonym.png';
+import startProjectCli from '../../assets/work/start-project-cli.png';
 import { SingleProject } from './types';
 
 export const projects: SingleProject[] = [
@@ -31,7 +33,38 @@ export const projects: SingleProject[] = [
     type: ['app', 'dataviz'],
     technologies: ['Typescript', 'React', 'Vega']
   },
-
+  {
+    id: 'rock-paper-scissors-game',
+    shortTitle: 'Rock, Paper, Scissors Game',
+    longTitle: 'Rock, Paper, Scissors Animated App',
+    longDescription:
+      'A simple animated version of the classic rock, paper, scissors game. The win/loss/tie record is saved in local storage so users can see their win ratio over time.', // TODO
+    image: rps,
+    website: 'https://rock-paper-scissors-three-neon.vercel.app/',
+    type: ['app', 'game'],
+    technologies: ['Typescript', 'React']
+  },
+  {
+    id: 'homonym-game',
+    shortTitle: 'Homonym',
+    longTitle: 'Homonym: A 30 Rock Game Show',
+    longDescription: 'A web app version Web of the 30 Rock game show "Homonym!"',
+    image: homonym,
+    website: 'https://homonym.vercel.app/',
+    type: ['app', 'game'],
+    technologies: ['Typescript', 'React']
+  },
+  {
+    id: 'react-vite-cli-tool',
+    shortTitle: 'React Vite/MUI Project Quickstart',
+    longTitle: 'React Vite/MUI Project Quickstart CLI tool',
+    longDescription:
+      'A customizable command-line tool that scaffolds a modern React + Vite project with pre-installed libraries and opinionated project structure.',
+    image: startProjectCli,
+    website: 'https://www.npmjs.com/package/start-vite-react-mui-project',
+    type: ['cli tool'],
+    technologies: ['Typescript', 'React', 'Material UI']
+  },
   {
     id: 'prism-charts',
     shortTitle: 'Prism Charts',
@@ -73,17 +106,17 @@ export const projects: SingleProject[] = [
   //   type: ['app'],
   //   technologies: ['Typescript', 'React', 'Next.js', 'Prisma']
   // },
-  {
-    id: 'impact-heatmap',
-    shortTitle: 'Impact Heatmap',
-    longDescription:
-      'To help the NIA IMPACT Collaboratory more effectively display their research on improving the health and care outcomes of people living with dementia, I worked with their team to create a custom interactive heatmap. The heatmap alone provides stakeholders with a summary view of the research findings while the drill down interaction (activated by clicking on different cells in the map) allows them to get a deeper understanding of the underlying data.',
-    image: impactHeatmap,
-    website: 'https://kgarrity22.github.io/impact-heat-map/',
-    code: '', // TODO: make public
-    type: ['app', 'dataviz'],
-    technologies: ['Nivo', 'React']
-  },
+  // {
+  //   id: 'impact-heatmap',
+  //   shortTitle: 'Impact Heatmap',
+  //   longDescription:
+  //     'To help the NIA IMPACT Collaboratory more effectively display their research on improving the health and care outcomes of people living with dementia, I worked with their team to create a custom interactive heatmap. The heatmap alone provides stakeholders with a summary view of the research findings while the drill down interaction (activated by clicking on different cells in the map) allows them to get a deeper understanding of the underlying data.',
+  //   image: impactHeatmap,
+  //   website: 'https://kgarrity22.github.io/impact-heat-map/',
+  //   code: '', // TODO: make public
+  //   type: ['app', 'dataviz'],
+  //   technologies: ['Nivo', 'React']
+  // },
   {
     id: 'viz-paper',
     shortTitle: 'Visualization Accessibility in the Wild',
@@ -95,15 +128,4 @@ export const projects: SingleProject[] = [
     type: ['research', 'dataviz'],
     technologies: ['Pandas', 'Altair', 'Excel']
   }
-  // {
-  //   id: 'rock-paper-scissors-game',
-  //   shortTitle: 'Rock, Paper, Scissors Game',
-  //   longTitle: 'Rock, Paper, Scissors Animated App',
-  //   longDescription:
-  //     'A simple animated version of the classic rock, paper, scissors game. The win/loss/tie record is saved in local storage so users can see their win ratio over time.', // TODO
-  //   image: rps,
-  //   website: 'https://rock-paper-scissors-three-neon.vercel.app/',
-  //   type: ['app', 'game'],
-  //   technologies: ['Typescript', 'React']
-  // }
 ];
